@@ -6,9 +6,7 @@ $by_id = [];
 
 $next_cursor = "";
 do {
-//	echo "LOOP RUN\n";
 	$scheduled = fetch_scheduled($next_cursor);
-	print_r($scheduled);
 	foreach ($scheduled["data"] as $tweet)
 		if ($tweet["scheduled_status"] === "SCHEDULED")
 			add_tweet($by_id, $tweet);
